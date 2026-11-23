@@ -4,7 +4,7 @@
 window.FLIPBOOK_CONFIG = {
   title: 'GALUH',
   subtitle: 'Asal-Usul Kuntilanak',
-  author: '[Nama Penulis]',
+  author: 'venstra',
   pdf: 'book/book.pdf',
   allowDownload: true,      // tampilkan tombol unduh PDF? (true / false)
   accent: '#c0392b'         // warna aksen (tombol & slider)
