@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0908">
+<title>Baca Buku</title>
+<meta name="description" content="Baca buku online dengan tampilan buku virtual.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0908'/%3E%3Cpath d='M12 16c8-3 15-2 20 3 5-5 12-6 20-3v33c-8-3-15-2-20 3-5-5-12-6-20-3z' fill='%23f3ecdc'/%3E%3Cpath d='M32 19v33' stroke='%23c0392b' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/config.js"></script>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand"><b id="bk-title"></b><small id="bk-sub"></small></div>
+  <div class="actions">
+    <button class="iconbtn" id="btn-sound" aria-label="Suara balik halaman" title="Suara balik halaman" aria-pressed="false">
+      <svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="wave" d="M16 8.5a5 5 0 010 7M18.5 6a8.5 8.5 0 010 12"/></svg>
+    </button>
+    <a class="iconbtn" id="btn-dl" aria-label="Unduh PDF" title="Unduh PDF" download hidden>
+      <svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"/></svg>
+    </a>
+    <button class="iconbtn" id="btn-fs" aria-label="Layar penuh" title="Layar penuh">
+      <svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="stage" id="stage">
+  <button class="edge edge-l" id="edge-l" aria-label="Halaman sebelumnya"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <div id="fit"></div>
+  <button class="edge edge-r" id="edge-r" aria-label="Halaman berikutnya"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <div class="toast" id="toast" role="status"></div>
+</main>
+
+<footer class="bar">
+  <button class="iconbtn sm-hide" id="btn-first" aria-label="Halaman pertama"><svg viewBox="0 0 24 24"><path d="M18 5l-7 7 7 7M7 5v14"/></svg></button>
+  <button class="iconbtn" id="btn-prev" aria-label="Sebelumnya"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <div class="scrub">
+    <input type="range" id="slider" min="1" max="1" value="1" aria-label="Pilih halaman">
+    <span id="label">&nbsp;</span>
+  </div>
+  <button class="iconbtn" id="btn-next" aria-label="Berikutnya"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <button class="iconbtn sm-hide" id="btn-last" aria-label="Halaman terakhir"><svg viewBox="0 0 24 24"><path d="M6 5l7 7-7 7M17 5v14"/></svg></button>
+</footer>
+
+<div class="loader" id="loader">
+  <div class="loader-card">
+    <div class="loader-title" id="ld-title"></div>
+    <div class="loader-sub" id="ld-sub"></div>
+    <div class="progress"><i id="ld-bar"></i></div>
+    <div class="loader-msg" id="ld-msg">Menyiapkan buku…</div>
+  </div>
+</div>
+
+<script src="lib/pdf.min.js"></script>
+<script src="lib/page-flip.browser.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
